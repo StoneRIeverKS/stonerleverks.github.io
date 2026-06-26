@@ -158,7 +158,8 @@ function nextCard() {
         currentCard.answer;
 
     answer.classList.add("hidden");
-
+    
+    console.log(question.innerHTML);
     renderMath(question);
 
 }
