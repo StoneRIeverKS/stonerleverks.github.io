@@ -1,50 +1,48 @@
 /**
- * 数式描画用
- * MathJax が読み込まれた後に呼び出す
+ * KaTeX 描画
  */
 
-async function renderMath(elements) {
+function renderMath(element) {
 
-    if (!window.MathJax) {
+    if (!window.renderMathInElement) {
 
-        console.error("MathJax が読み込まれていません。");
+        console.error("KaTeX が読み込まれていません");
 
         document.getElementById("debugMathJax").textContent =
-            "NG";
+            "KaTeX NG";
 
         return;
     }
 
-    try {
+    renderMathInElement(
 
-        document.getElementById("debugMathJax").textContent =
-            "OK (" + (MathJax.version || "unknown") + ")";
+        element,
 
-        if (MathJax.typesetClear) {
-            MathJax.typesetClear(elements);
+        {
+
+            delimiters: [
+
+                {
+                    left: "$$",
+                    right: "$$",
+                    display: true
+                },
+
+                {
+                    left: "$",
+                    right: "$",
+                    display: false
+                }
+
+            ],
+
+            throwOnError: false
+
         }
 
-        if (MathJax.typesetPromise) {
+    );
 
-            await MathJax.typesetPromise(elements);
-
-        } else {
-
-            console.error("typesetPromise が存在しません。");
-            console.log(MathJax);
-
-            document.getElementById("debugError").textContent =
-                "MathJax.typesetPromise が存在しません。";
-
-        }
-
-    } catch (e) {
-
-        console.error(e);
-
-        document.getElementById("debugError").textContent =
-            e.toString();
-
-    }
+    document.getElementById("debugMathJax").textContent =
+        "KaTeX OK";
 
 }

@@ -132,18 +132,16 @@ function showPage(pageId) {
 /**
  * 次の問題
  */
-async function nextCard() {
+function nextCard() {
 
-    if (cards.length === 0) {
-
+    if(cards.length===0){
         return;
-
     }
 
     currentCard =
         cards[
             Math.floor(
-                Math.random() * cards.length
+                Math.random()*cards.length
             )
         ];
 
@@ -153,29 +151,29 @@ async function nextCard() {
     const answer =
         document.getElementById("answer");
 
-    question.textContent =
+    question.innerHTML =
         currentCard.question;
 
-    answer.textContent =
+    answer.innerHTML =
         currentCard.answer;
 
     answer.classList.add("hidden");
 
-    await renderMath([question]);
+    renderMath(question);
 
 }
 
 /**
  * 答え表示
  */
-async function showAnswer() {
+function showAnswer(){
 
     const answer =
         document.getElementById("answer");
 
     answer.classList.remove("hidden");
 
-    await renderMath([answer]);
+    renderMath(answer);
 
 }
 
