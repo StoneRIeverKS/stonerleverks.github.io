@@ -1,0 +1,13 @@
+
+body{font-family:sans-serif;max-width:800px;margin:auto;padding:20px}
+.tab-bar{display:flex;gap:8px;margin-bottom:16px}
+.tab-bar button{flex:1;padding:10px}
+.page{display:none}
+.page.active{display:block}
+.card{border:1px solid #ccc;border-radius:8px;padding:16px;min-height:100px;margin:12px 0}
+.hidden{display:none}
+textarea{width:100%;min-height:100px;margin:8px 0}
+.button-row{display:flex;gap:8px}
+.button-row button,#addCardBtn{padding:10px}
+#debugPanel{margin-top:24px;border-top:1px solid #ccc;padding-top:12px;font-size:.9em}
+pre{white-space:pre-wrap}

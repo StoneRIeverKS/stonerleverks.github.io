@@ -3,319 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>単語帳</title>
+
+<link rel="stylesheet" href="style.css">
 
 <script>
 window.MathJax = {
-    tex: {
-        inlineMath: [['$', '$']]
-    }
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
 };
 </script>
-
-<script
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
-async>
-</script>
-
-<style>
-
-body{
-    font-family:sans-serif;
-    max-width:800px;
-    margin:auto;
-    padding:20px;
-}
-
-h1{
-    text-align:center;
-}
-
-.tab-bar{
-    display:flex;
-    gap:10px;
-    margin-bottom:20px;
-}
-
-.tab-bar button{
-    flex:1;
-}
-
-.page{
-    display:none;
-}
-
-.page.active{
-    display:block;
-}
-
-.card{
-    border:1px solid #ccc;
-    border-radius:10px;
-    padding:20px;
-    min-height:120px;
-    margin-bottom:15px;
-}
-
-#answer{
-    display:none;
-}
-
-textarea{
-    width:100%;
-    min-height:100px;
-}
-
-button{
-    padding:10px;
-    margin-top:10px;
-}
-
-.list-item{
-    border-bottom:1px solid #ddd;
-    padding:10px 0;
-}
-
-</style>
-
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script defer src="math.js"></script>
+<script defer src="app.js"></script>
 </head>
+
 <body>
 
 <h1>単語帳</h1>
 
-<div class="tab-bar">
-    <button onclick="showPage('study')">学習</button>
-    <button onclick="showPage('add')">追加</button>
-    <button onclick="showPage('manage')">管理</button>
-</div>
+<nav class="tab-bar">
+    <button data-page="study">学習</button>
+    <button data-page="add">追加</button>
+    <button data-page="manage">管理</button>
+</nav>
 
-<!-- 学習 -->
+<main>
 
-<div id="study" class="page active">
+<section id="study" class="page active">
+    <div id="question" class="card"></div>
+    <div id="answer" class="card hidden"></div>
 
-    <div id="question" class="card">
-        問題
+    <div class="button-row">
+        <button id="showAnswerBtn">答えを見る</button>
+        <button id="nextBtn">次の問題</button>
     </div>
+</section>
 
-    <div id="answer" class="card">
-        答え
-    </div>
+<section id="add" class="page">
 
-    <button onclick="showAnswer()">
-        答えを見る
-    </button>
-
-    <button onclick="nextCard()">
-        次の問題
-    </button>
-
-</div>
-
-<!-- 追加 -->
-
-<div id="add" class="page">
-
-    <h2>問題</h2>
-
+    <label for="newQuestion">問題</label>
     <textarea id="newQuestion"></textarea>
 
-    <h2>答え</h2>
-
+    <label for="newAnswer">答え</label>
     <textarea id="newAnswer"></textarea>
 
-    <button onclick="addCard()">
-        登録
-    </button>
+    <button id="addCardBtn">登録</button>
 
-</div>
+</section>
 
-<!-- 管理 -->
+<section id="manage" class="page">
 
-<div id="manage" class="page">
+    <h2>カード一覧</h2>
 
     <div id="cardList"></div>
 
-</div>
+</section>
 
-<script>
+</main>
 
-let cards = [];
-let currentCard = null;
+<footer id="debugPanel">
+    <h3>Debug</h3>
 
-function initializeCards(){
+    <div>MathJax:
+        <span id="debugMathJax">未確認</span>
+    </div>
 
-    const saved =
-        localStorage.getItem("cards");
+    <div>カード数:
+        <span id="debugCardCount">0</span>
+    </div>
 
-    if(saved){
-
-        cards = JSON.parse(saved);
-
-    }else{
-
-        cards = [
-            {
-                question:"$E[X]$",
-                answer:"$\\sum_x xP(X=x)$"
-            },
-            {
-                question:"ポアソン分布の期待値",
-                answer:"$\\lambda$"
-            }
-        ];
-
-        saveCards();
-    }
-}
-
-function saveCards(){
-
-    localStorage.setItem(
-        "cards",
-        JSON.stringify(cards)
-    );
-}
-
-function showPage(pageId){
-
-    document
-        .querySelectorAll(".page")
-        .forEach(page => {
-            page.classList.remove("active");
-        });
-
-    document
-        .getElementById(pageId)
-        .classList.add("active");
-
-    if(pageId === "manage"){
-        renderCardList();
-    }
-}
-
-function nextCard(){
-
-    if(cards.length === 0){
-        return;
-    }
-
-    currentCard =
-        cards[
-            Math.floor(
-                Math.random() * cards.length
-            )
-        ];
-
-    document
-        .getElementById("question")
-        .innerHTML =
-        currentCard.question;
-
-    document
-        .getElementById("answer")
-        .innerHTML =
-        currentCard.answer;
-
-    document
-        .getElementById("answer")
-        .style.display =
-        "none";
-
-    MathJax.typesetPromise();
-}
-
-function showAnswer(){
-
-    document
-        .getElementById("answer")
-        .style.display =
-        "block";
-
-    MathJax.typesetPromise();
-}
-
-function addCard(){
-
-    const question =
-        document
-        .getElementById("newQuestion")
-        .value
-        .trim();
-
-    const answer =
-        document
-        .getElementById("newAnswer")
-        .value
-        .trim();
-
-    if(!question || !answer){
-
-        alert("問題と答えを入力してください");
-
-        return;
-    }
-
-    cards.push({
-        question,
-        answer
-    });
-
-    saveCards();
-
-    document
-        .getElementById("newQuestion")
-        .value = "";
-
-    document
-        .getElementById("newAnswer")
-        .value = "";
-
-    alert("登録しました");
-
-    renderCardList();
-}
-
-function renderCardList(){
-
-    const cardList =
-        document
-        .getElementById("cardList");
-
-    cardList.innerHTML = "";
-
-    cards.forEach((card,index)=>{
-
-        const div =
-            document.createElement("div");
-
-        div.className =
-            "list-item";
-
-        div.innerHTML =
-            `
-            <strong>${index+1}</strong><br>
-            ${escapeHtml(card.question)}
-            `;
-
-        cardList.appendChild(div);
-    });
-}
-
-function escapeHtml(text){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent = text;
-
-    return div.innerHTML;
-}
-
-initializeCards();
-nextCard();
-
-</script>
+    <div>エラー:
+        <pre id="debugError">なし</pre>
+    </div>
+</footer>
 
 </body>
 </html>
