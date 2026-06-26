@@ -160,6 +160,7 @@ function nextCard() {
     answer.classList.add("hidden");
     
     console.log(question.innerHTML);
+    alert(currentCard.question);
     renderMath(question);
 
 }
