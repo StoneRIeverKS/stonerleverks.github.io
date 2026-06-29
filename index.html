@@ -1,51 +1,108 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>単語帳</title>
 
-<meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
 
-<title>単語帳</title>
+    <script
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+        async>
+    </script>
 
-<link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+        }
 
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+        .card {
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
 
-<script defer
-src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+        button {
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            margin: 5px;
+        }
 
-<script defer
-src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
-
-<script defer src="math.js"></script>
-<script defer src="app.js"></script>
-
+        #answer {
+            display: none;
+        }
+    </style>
 </head>
-
 <body>
 
 <h1>単語帳</h1>
 
-<div id="question" class="card">
-読み込み中...
-</div>
+<div id="question" class="card"></div>
 
-<div id="answer" class="card" style="display:none;">
-</div>
+<div id="answer" class="card"></div>
 
-<div class="button-area">
+<button id="showAnswerBtn">答えを見る</button>
+<button id="nextBtn">次の問題</button>
 
-<button onclick="showAnswer()">
-答えを見る
-</button>
+<script>
 
-<button onclick="nextCard()">
-次の問題
-</button>
+let cards = [];
+let currentCard = null;
 
-</div>
+async function loadCards() {
+    const response = await fetch('cards.json');
+    cards = await response.json();
+
+    showRandomCard();
+}
+
+function showRandomCard() {
+
+    currentCard =
+        cards[Math.floor(Math.random() * cards.length)];
+
+    document.getElementById("question").innerHTML =
+        currentCard.question;
+
+    document.getElementById("answer").innerHTML =
+        currentCard.answer;
+
+    document.getElementById("answer").style.display = "none";
+
+    MathJax.typesetPromise();
+}
+
+document
+    .getElementById("showAnswerBtn")
+    .addEventListener("click", () => {
+
+        document.getElementById("answer")
+            .style.display = "block";
+
+        MathJax.typesetPromise();
+    });
+
+document
+    .getElementById("nextBtn")
+    .addEventListener("click", showRandomCard);
+
+loadCards();
+
+</script>
 
 </body>
 </html>
