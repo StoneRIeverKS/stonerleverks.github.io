@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
 <title>単語帳</title>
 
 <link rel="stylesheet" href="style.css">
@@ -18,67 +21,31 @@ src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
 
 <script defer src="math.js"></script>
 <script defer src="app.js"></script>
+
 </head>
 
 <body>
 
 <h1>単語帳</h1>
 
-<nav class="tab-bar">
-    <button data-page="study">学習</button>
-    <button data-page="add">追加</button>
-    <button data-page="manage">管理</button>
-</nav>
+<div id="question" class="card">
+読み込み中...
+</div>
 
-<main>
+<div id="answer" class="card" style="display:none;">
+</div>
 
-<section id="study" class="page active">
-    <div id="question" class="card"></div>
-    <div id="answer" class="card hidden"></div>
+<div class="button-area">
 
-    <div class="button-row">
-        <button id="showAnswerBtn">答えを見る</button>
-        <button id="nextBtn">次の問題</button>
-    </div>
-</section>
+<button onclick="showAnswer()">
+答えを見る
+</button>
 
-<section id="add" class="page">
+<button onclick="nextCard()">
+次の問題
+</button>
 
-    <label for="newQuestion">問題</label>
-    <textarea id="newQuestion"></textarea>
-
-    <label for="newAnswer">答え</label>
-    <textarea id="newAnswer"></textarea>
-
-    <button id="addCardBtn">登録</button>
-
-</section>
-
-<section id="manage" class="page">
-
-    <h2>カード一覧</h2>
-
-    <div id="cardList"></div>
-
-</section>
-
-</main>
-
-<footer id="debugPanel">
-    <h3>Debug</h3>
-
-    <div>MathJax:
-        <span id="debugMathJax">未確認</span>
-    </div>
-
-    <div>カード数:
-        <span id="debugCardCount">0</span>
-    </div>
-
-    <div>エラー:
-        <pre id="debugError">なし</pre>
-    </div>
-</footer>
+</div>
 
 </body>
 </html>
