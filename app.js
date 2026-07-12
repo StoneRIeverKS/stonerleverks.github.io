@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", initialize);
 /**
  * 初期化
  */
-function initialize() {
-
-    initializeCards();
+async function initialize() {
 
     initializeButtons();
+
+    await initializeCards();
 
     nextCard();
 
@@ -50,7 +50,7 @@ function initializeButtons() {
 /**
  * LocalStorage読み込み
  */
-function initializeCards() {
+async function initializeCards() {
 
     const saved =
         localStorage.getItem("cards");
@@ -61,17 +61,43 @@ function initializeCards() {
 
     } else {
 
-        cards = [
+        try {
 
-            {
-                id: 1,
-                question: "$E[X]$",
-                answer: "$\\sum_x xP(X=x)$"
+            const response =
+                await fetch("flashcards/cards.json");
+
+            if (!response.ok) {
+
+                throw new Error(
+                    `HTTP ${response.status}`
+                );
+
             }
 
-        ];
+            cards = await response.json();
 
-        saveCards();
+            saveCards();
+
+        } catch (error) {
+
+            console.error(
+                "カード読み込みに失敗しました",
+                error
+            );
+
+            cards = [
+
+                {
+                    id: 1,
+                    question: "$E[X]$",
+                    answer: "$\\sum_x xP(X=x)$"
+                }
+
+            ];
+
+            saveCards();
+
+        }
 
     }
 
@@ -158,9 +184,7 @@ function nextCard() {
         currentCard.answer;
 
     answer.classList.add("hidden");
-    
-    console.log(question.innerHTML);
-    alert(currentCard.question);
+
     renderMath(question);
 
 }
