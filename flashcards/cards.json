@@ -1,7 +1,7 @@
 [
   {
-    "question": "$\\int_0^1 x^2 dx$",
-    "answer": "$\\frac{1}{3}$"
+    "question": "母平均$\\lambda$の指数分布の確率密度関数・平均・分散・積率母関数",
+    "answer": "$f(x)=\\dfrac{1}{\\lambda} e^{-\\dfrac{1}{\\lambda} x}, E[X]=\\lambda, Var(X)=\\lambda^2, M_X(t)=\\dfrac{1}{1-\\lambda t}$"
   },
   {
     "question": "$E[X]$",
