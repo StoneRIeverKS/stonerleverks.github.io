@@ -4,7 +4,7 @@ body{font-family:sans-serif;max-width:800px;margin:auto;padding:20px}
 .tab-bar button{flex:1;padding:10px}
 .page{display:none}
 .page.active{display:block}
-.card{border:1px solid #ccc;border-radius:8px;padding:16px;min-height:100px;margin:12px 0}
+.card{border:1px solid #ccc;border-radius:8px;padding:16px;min-height:100px;margin:12px 0;white-space:pre-wrap}
 .hidden{display:none}
 textarea{width:100%;min-height:100px;margin:8px 0}
 .button-row{display:flex;gap:8px}
