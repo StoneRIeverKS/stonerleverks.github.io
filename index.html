@@ -64,7 +64,7 @@ let cards = [];
 let currentCard = null;
 
 async function loadCards() {
-    const response = await fetch('cards.json');
+    const response = await fetch('flashcards/cards.json');
     cards = await response.json();
 
     showRandomCard();
