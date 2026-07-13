@@ -4,19 +4,7 @@
     "answer": "$f(x)=\\dfrac{1}{\\lambda} e^{-\\dfrac{1}{\\lambda} x}$\n$E[X]=\\lambda$\n$Var(X)=\\lambda^2$\n$M_X(t)=\\dfrac{1}{1-\\lambda t}$"
   },
   {
-    "question": "改行テスト",
-    "answer": "1行目\n2行目\n3行目"
-  },
-  {
-    "question": "$E[X]$",
-    "answer": "$\\sum_x xP(X=x)$"
-  },
-  {
-    "question": "ポアソン分布の期待値",
-    "answer": "$\\lambda$"
-  },
-  {
-    "question": "二項分布の分散",
-    "answer": "$np(1-p)$"
+    "question": "チェビシェフの不等式",
+    "answer": "$P(|X-\\mu|\\ge k\\sigma)\\le \\dfrac{1}{k^2}$"
   }
 ]
