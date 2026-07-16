@@ -38,5 +38,17 @@
   {
     "question": "1~Nまで書かれた紙から$n$枚非復元抽出したときの、$\\bar{X}$の期待値と分散",
     "answer": "$E[\\bar{X}] = \\dfrac{N+1}{2}$\n$Var(\\bar{X}) = \\dfrac{1}{n} \\dfrac{N-n}{N-1} \\dfrac{N^2-1}{12}$"
+  },
+  {
+    "question": "$F_n^m$分布の定義",
+    "answer": "$\\chi_{n}^2, \\chi_{m}^2$に対して、$F_n^m = \\dfrac{\\chi_m^2/m}{\\chi_n^2/n}$"
+  },
+  {
+    "question": "$F_n^m(1-\\varepsilon)$と等しいものは？",
+    "answer": "$\\dfrac{1}{F_m^n(\\varepsilon)}$"
+  },
+  {
+    "question": "分散比が1かどうかの検定統計量",
+    "answer": "$T = \\dfrac{\\dfrac{1}{n-1}\\displaystyle{\\sum}\\left(\\dfrac{X-\\bar{X}}{\\sigma_n}\\right))^2{1}$"
   }
 ]
