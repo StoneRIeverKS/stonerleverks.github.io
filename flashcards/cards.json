@@ -16,7 +16,7 @@
     "answer": "$(0, 0), (\\alpha, \\dfrac{1}{\\beta}), (\\beta, \\dfrac{1}{\\beta}), (\\alpha + \\beta, 0)$"
   },
   {
-    "question": "一様分布$\\X \\sim U(a,b)$の確率密度関数・平均・分散・積率母関数",
+    "question": "一様分布$X \\sim U(a,b)$の確率密度関数・平均・分散・積率母関数",
     "answer": "$f(x)=\\dfrac{1}{b-a}$\n$E[X]=\\dfrac{a+b}{2}$\n$Var(X)=\\dfrac{(b-a)^2}{12}$\n$M_X(t)=\\dfrac{e^{tb}-e^{ta}}{t(b-a)}$"
   },
   {
@@ -29,14 +29,14 @@
   },
   {
     "question": "母平均$\\mu$の指数分布を$H_0: \\mu = \\mu_0$で検定する際の検定統計量",
-    "answer": "$\\dfrac{2n \\hat{\\mu}}{\\mu_0} \\sim \\Chi^2_{2n}$"
+    "answer": "$\\dfrac{2n \\hat{\\mu}}{\\mu_0} \\sim \\chi^2_{2n}$"
   },
   {
-    "question": "母平均$\\mu$の指数分布で標本に打ち切りがある場合に$H_0: \\mu = \\mu_0$で検定する際の検定統計量。ただし、打ち切りを$f$、$r = {x_i \\leq f {\rm となる標本の個数}}$",
-    "answer": "$\\hat{\\mu} = \\dfrac{\\displaystyle{\\sum_{i=1}^r} x_i +(n-r)f}{r}, \\dfrac{2r \\hat{\\mu}}{\\mu_0} \\sim \\Chi^2_{2r}$"
+    "question": "母平均$\\mu$の指数分布で標本に打ち切りがある場合に$H_0: \\mu = \\mu_0$で検定する際の検定統計量。ただし、打ち切りを$f$、$r = \\#\\{x_i \\leq f\\}$",
+    "answer": "$\\hat{\\mu} = \\dfrac{\\displaystyle{\\sum_{i=1}^r} x_i +(n-r)f}{r}$\n$\\dfrac{2r \\hat{\\mu}}{\\mu_0} \\sim \\Chi^2_{2r}$"
   },
   {
     "question": "1~Nまで書かれた紙から$n$枚非復元抽出したときの、$\\bar{X}$の期待値と分散",
-    "answer": "$E[\\bar{X}] = \\dfrac{N+1}{2}, \\quad Var(\\bar{X}) = \\dfrac{1}{n} \\dfrac{N-n}{N-1} \\dfrac{N^2-1}{12}$"
+    "answer": "$E[\\bar{X}] = \\dfrac{N+1}{2}$\n$Var(\\bar{X}) = \\dfrac{1}{n} \\dfrac{N-n}{N-1} \\dfrac{N^2-1}{12}$"
   }
 ]
