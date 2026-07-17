@@ -49,6 +49,10 @@
   },
   {
     "question": "分散比が1かどうかの検定統計量",
-    "answer": "$T = \\dfrac{\\dfrac{1}{n-1}\\displaystyle{\\sum}\\left(\\dfrac{X-\\bar{X}}{\\sigma_n}\\right))^2{1}$"
+    "answer": "$s_x^2 = \\dfrac{1}{n_x-1} \\displaystyle{\\sum_{i=1}^{n_x} \\left(\\dfrac{X_i - \\bar{X}}{\\sigma_x} \\right)^2}$\n$s_y^2 = \\dfrac{1}{n_y-1} \\displaystyle{\\sum_{i=1}^{n_y} \\left(\\dfrac{Y_i - \\bar{Y}}{\\sigma_y} \\right)^2}$\n$T = \\dfrac{s_x^2}{s_y^2} \\sim F_{n_y-1}^{n_x-1}$"
+  },
+  {
+    "question": "相関係数",
+    "answer": "$r = \\dfrac{\\sum (X_i - \\bar{X})(Y_i - \\bar{Y})}{\\sqrt{\\sum_{i=1}^n (X_i - \\bar{X})^2 \\sum (Y_i - \\bar{Y})^2}}$"
   }
 ]
