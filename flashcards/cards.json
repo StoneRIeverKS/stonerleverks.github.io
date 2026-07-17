@@ -21,7 +21,7 @@
   },
   {
     "question": "分散が特定の値に等しいかの検定を行う際の検定統計量",
-    "answer": "$\\displaystyle{\\sum} \\left(\\frac{(X_i-\\bar{X})}{\\sigma_0}\\right)^2 \\sim \\chi^2_{n-1}$"
+    "answer": "$\\displaystyle{\\sum} \\left(\\frac{X_i-\\bar{X}}{\\sigma_0}\\right)^2 \\sim \\chi^2_{n-1}$"
   },
   {
     "question": "有意水準",
