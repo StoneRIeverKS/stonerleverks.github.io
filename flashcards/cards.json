@@ -54,5 +54,9 @@
   {
     "question": "相関係数",
     "answer": "$r = \\dfrac{\\sum (X_i - \\bar{X})(Y_i - \\bar{Y})}{\\sqrt{\\sum_{i=1}^n (X_i - \\bar{X})^2 \\sum (Y_i - \\bar{Y})^2}}$"
+  },
+  {
+    "question": "偏自己相関の定義",
+    "answer": "$Y_t-\\mu = \\phi_{1h}(Y_{t-1}-\\mu)+ \\cdots+ \\phi_{hh}(Y_{t-h}-\\mu)$"
   }
 ]
