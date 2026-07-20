@@ -61,6 +61,10 @@
   },
   {
     "question":"AR(2)モデルの自己共分散",
-    "answer": "{\\rm Var}\\left[Y_t\\right] = \\dfrac{1-\\phi_2}{1+\\phi_2} \\dfrac{\\sigma^2}{(1-\\phi_2)^-\\phi_1^2}"
+    "answer": "${\\rm Var}\\left[Y_t\\right] = \\dfrac{1-\\phi_2}{1+\\phi_2} \\dfrac{\\sigma^2}{(1-\\phi_2)^-\\phi_1^2}$"
+  },
+  {
+    "question":"十分統計量（充足している統計量）の定義",
+    "answer": "$P(X=x | T(X)=t; \\theta) = P(X=x | T(X)=t)$"
   }
 ]
