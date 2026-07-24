@@ -70,5 +70,9 @@
   {
     "question":"クラメールラオの不等式",
     "answer": "${\\rm Var}[\\hat{\\theta}] \\geq \\dfrac{1}{E\\left[\\left(\\dfrac{\\partial \\log f(X;\\theta)}{\\partial \\theta}\\right)^2\\right]} = \\dfrac{1}{-E\\left[\\dfrac{\\partial^2 \\log f(X;\\theta)}{\\partial \\theta^2}\\right]}$"
+  },
+  {
+    "question":"Fisher-Neymanの分解定理",
+    "answer": "$\\hat{\\theta}$が$\\theta$の十分統計量であることの必要十分条件は、$f(x;\\theta) = g(\\hat{\\theta};\\theta)h(x)$の形に分解できること"
   }
 ]
