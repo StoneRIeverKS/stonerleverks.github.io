@@ -66,5 +66,9 @@
   {
     "question":"十分統計量（充足している統計量）の定義",
     "answer": "$P(X=x | T(X)=t; \\theta) = P(X=x | T(X)=t)$"
+  },
+  {
+    "question":"クラメールラオの不等式",
+    "answer": "${\\rm Var}[\\hat{\\theta}] \\geq \\dfrac{1}{E\\left[\\left(\\dfrac{\\partial \\log f(X;\\theta)}{\\partial \\theta}\\right)^2\\right]} = \\dfrac{1}{-E\\left[\\dfrac{\\partial^2 \\log f(X;\\theta)}{\\partial \\theta^2}\\right]}$"
   }
 ]
