@@ -60,8 +60,8 @@
     "answer": "$Y_t-\\mu = \\phi_{1h}(Y_{t-1}-\\mu)+ \\cdots+ \\phi_{hh}(Y_{t-h}-\\mu)$"
   },
   {
-    "question":"AR(2)モデルの自己共分散",
-    "answer": "${\\rm Var}\\left[Y_t\\right] = \\dfrac{1-\\phi_2}{1+\\phi_2} \\dfrac{\\sigma^2}{(1-\\phi_2)^-\\phi_1^2}$"
+    "question":"AR(2)モデル$Y_t = \\phi_0 + \\phi_1 Y_{t-1} + \\phi_2 Y_{t-2} + \\varepsilon_t$の自己共分散",
+    "answer": "${\\rm Var}\\left[Y_t\\right] = \\dfrac{1-\\phi_2}{1+\\phi_2} \\dfrac{\\sigma^2}{(1-\\phi_2)^2-\\phi_1^2}$"
   },
   {
     "question":"十分統計量（充足している統計量）の定義",
@@ -74,5 +74,17 @@
   {
     "question":"Fisher-Neymanの分解定理",
     "answer": "$\\hat{\\theta}$が$\\theta$の十分統計量であることの必要十分条件は、$f(x;\\theta) = g(\\hat{\\theta};\\theta)h(x)$の形に分解できること"
+  },
+  {
+    "question":"しっぽ確率から期待値を求める公式",
+    "answer": "$E[X] = \\int_0^\\infty P(X>x)dx$"
+  },
+  {
+    "question":"$f(x) e^x$と$f(x) e^{-x}$の積分",
+    "answer": "$\\int f(x) e^x dx = e^x (f(x)-f^\\prime(x)+f^{\\prime \\prime}(x)-\\cdots)$\n$\\int f(x) e^{-x} dx = -e^{-x} (f(x)+f^\\prime(x)+f^{\\prime \\prime}(x)+\\cdots)$"
+  },
+  {
+    "question":"幾何分布の確率関数・期待値・分散・積率母関数",
+    "answer": "$P(X=x) = p(1-p)^{x-1}$\n$E[X] = \\dfrac{1}{p}$\n$Var(X) = \\dfrac{1-p}{p^2}$\n$M(t) = \\dfrac{pe^t}{1-(1-p)e^t}$"
   }
 ]
