@@ -86,5 +86,9 @@
   {
     "question":"幾何分布の確率関数・期待値・分散・積率母関数",
     "answer": "$P(X=x) = p(1-p)^{x-1}$\n$E[X] = \\dfrac{1}{p}$\n$Var(X) = \\dfrac{1-p}{p^2}$\n$M(t) = \\dfrac{pe^t}{1-(1-p)e^t}$"
+  },
+  {
+    "question":"正規分布の積率母関数",
+    "answer":"$m(t) = e^{\\mu t \\dfrac{\\sigma^2 t^2}{2}$"
   }
 ]
