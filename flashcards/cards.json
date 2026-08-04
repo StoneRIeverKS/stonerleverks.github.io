@@ -89,6 +89,6 @@
   },
   {
     "question":"正規分布の積率母関数",
-    "answer":"$m(t) = e^{\\mu t \\dfrac{\\sigma^2 t^2}{2}$"
+    "answer":"$m(t) = e^{\\mu t \\dfrac{\\sigma^2 t^2}{2}}$"
   }
 ]
