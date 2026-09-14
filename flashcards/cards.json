@@ -93,6 +93,26 @@
   },
   {
     "question":"$F_{m}^{n}$分布の確率関数・期待値・分散・積率母関数",
-    "answer":"$f(x) = \\dfrac{\\left(\\dfrac{n}{m}\\right)^{\\dfrac{n}{2}}}{B\\(\\dfrac{n}{2}, \\dfrac{m}{2}\\)} \\dfrac{x^{\\dfrac{n}{2}-1}}{\\left(1+\\dfrac{n}{m}z\\right)^{-\\dfrac{n+m}{2}}}$\n$E[X]=$\n$Var[X]=$\n$M(t)=$"
+    "answer":"$f(x) = \\dfrac{\\left(\\dfrac{n}{m}\\right)^{\\dfrac{n}{2}}}{B\\(\\dfrac{n}{2}, \\dfrac{m}{2}\\)} \\dfrac{x^{\\dfrac{n}{2}-1}}{\\left(1+\\dfrac{n}{m}x\\right)^{\\dfrac{n+m}{2}}}$\n$E[X]=\\dfrac{m}{m-2}$"
+  },
+  {
+    "question":"決定係数の定義",
+    "answer":"$R^2 = \\dfrac{\\sum (\\hat{Y}_i - \\bar{Y})^2}{\\sum (Y_i - \\bar{Y})^2}$"
+  },
+  {
+    "question":"単回帰の場合、決定係数は何と等しいか？",
+    "answer":"相関係数と等しい。つまり、$R^2 = r_{xy}^2$"
+  },
+  {
+    "question":"$\\Gamma\\left(\\dfrac{1}{2}\\right)$はいくつ？",
+    "answer":"$\\sqrt{\\pi}$"
+  },
+  {
+    "question":"$N$個の球が入った袋があり、そのうちの$M$個が赤、$N-M$個が白である。このとき、$n$個の球を無作為に抽出したとき、赤い球が$x$個である確率を表す確率分布の名前と確率関数は？",
+    "answer":"超幾何分布\n$P(X=x) = \\dfrac{\\binom{M}{x} \\binom{N-M}{n-x}}{\\binom{N}{n}}$"
+  },
+  {
+    "question":"Bernoulli分布の$\\hat{p}の精密法の信頼区間の使うべきときとその公式$",
+    "answer":"使うべき時：$n \\bar{x} \\geq 4$\n公式：$t=n\\bar{x}$\n$n_1 = 2(n-t+1)$\n$n_1^\\prime = 2(t+1)$\n$n_2 = 2t$\n$n_2^\\prime = 2(n-t)$\n$\\dfrac{n_2}{n_1 F_{n_2}^{n_1}\\left \\dfrac{\\varepsilon}{2}\\right)+n_2}<p<\\dfrac{n_1^\\prime F_{n_2^\\prime}^{n_1^\\prime}\\left(\\dfrac{\\varepsilon}{2}\\right)}{n_1^\\prime F_{n_2^\\prime}^{n_1^\\prime}\\left \\dfrac{\\varepsilon}{2}\\right)+n_2^\\prime}$"
   }
 ]
