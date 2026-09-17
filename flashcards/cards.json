@@ -113,7 +113,7 @@
   },
   {
     "question":"Bernoulli分布の$\\hat{p}$の精密法の信頼区間の使うべきときとその公式",
-    "answer":"使うべき時：$n \\bar{x} \\leq 4$\n公式：$t=n\\bar{x}$\n$n_1 = 2(n-t+1)$\n$n_1^\\prime = 2(t+1)$\n$n_2 = 2t$\n$n_2^\\prime = 2(n-t)$\n$\\dfrac{n_2}{n_1 F_{n_2}^{n_1}\\left(\\dfrac{\\varepsilon}{2}\\right)+n_2}\\mathrel{<}p\\mathrel{<}\\dfrac{n_1^\\prime F_{n_2^\\prime}^{n_1^\\prime}\\left(\\frac{\\varepsilon}{2}\\right)}{n_1^\\prime F_{n_2^\\prime}^{n_1^\\prime}\\left(\\frac{\\varepsilon}{2}\\right)+n_2^\\prime}}$"
+    "answer":"使うべき時：$n \\bar{x} \\leq 4$\n公式：$t=n\\bar{x}$\n$n_1 = 2(n-t+1)$\n$n_1^\\prime = 2(t+1)$\n$n_2 = 2t$\n$n_2^\\prime = 2(n-t)$\n$\\dfrac{n_2}{n_1 F_{n_2}^{n_1}\\left(\\dfrac{\\varepsilon}{2}\\right)+n_2}\\leq p \\leq\\dfrac{n_1^\\prime F_{n_2^\\prime}^{n_1^\\prime}\\left(\\frac{\\varepsilon}{2}\\right)}{n_1^\\prime F_{n_2^\\prime}^{n_1^\\prime}\\left(\\frac{\\varepsilon}{2}\\right)+n_2^\\prime}}$"
   },
   {
     "question":"順序統計量の確率密度関数の公式",
