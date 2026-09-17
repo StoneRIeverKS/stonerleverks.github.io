@@ -92,7 +92,7 @@
     "answer":"$m(t) = e^{\\mu t \\dfrac{\\sigma^2 t^2}{2}}$"
   },
   {
-    "question":"$F_{m}^{n}$分布の確率密度関数・期待値・分散・積率母関数",
+    "question":"$F_{m}^{n}$分布の確率密度関数・期待値",
     "answer":"$f(x) = \\dfrac{\\left(\\dfrac{n}{m}\\right)^{\\dfrac{n}{2}}}{B\\left(\\dfrac{n}{2}, \\dfrac{m}{2}\\right)} \\dfrac{x^{\\dfrac{n}{2}-1}}{\\left(1+\\dfrac{n}{m}x\\right)^{\\dfrac{n+m}{2}}}$\n$E[X]=\\dfrac{m}{m-2}$"
   },
   {
