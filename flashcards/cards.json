@@ -92,7 +92,7 @@
     "answer":"$m(t) = e^{\\mu t \\dfrac{\\sigma^2 t^2}{2}}$"
   },
   {
-    "question":"$F_{m}^{n}$分布の確率関数・期待値・分散・積率母関数",
+    "question":"$F_{m}^{n}$分布の確率密度関数・期待値・分散・積率母関数",
     "answer":"$f(x) = \\dfrac{\\left(\\dfrac{n}{m}\\right)^{\\dfrac{n}{2}}}{B\\right(\\dfrac{n}{2}, \\dfrac{m}{2}\\left)} \\dfrac{x^{\\dfrac{n}{2}-1}}{\\left(1+\\dfrac{n}{m}x\\right)^{\\dfrac{n+m}{2}}}$\n$E[X]=\\dfrac{m}{m-2}$"
   },
   {
@@ -112,7 +112,7 @@
     "answer":"超幾何分布\n$P(X=x) = \\dfrac{\\binom{M}{x} \\binom{N-M}{n-x}}{\\binom{N}{n}}$"
   },
   {
-    "question":"Bernoulli分布の$\\hat{p}の精密法の信頼区間の使うべきときとその公式$",
+    "question":"Bernoulli分布の$\\hat{p}$の精密法の信頼区間の使うべきときとその公式",
     "answer":"使うべき時：$n \\bar{x} \\leq 4$\n公式：$t=n\\bar{x}$\n$n_1 = 2(n-t+1)$\n$n_1^\\prime = 2(t+1)$\n$n_2 = 2t$\n$n_2^\\prime = 2(n-t)$\n$\\frac{n_2}{n_1F_{n_2}^{n_1}\\left(\\frac{\\varepsilon}{2}\\right)+n_2}<p<\\frac{n_1'F_{n_2'}^{n_1'}\\left(\\frac{\\varepsilon}{2}\\right)}{n_1'F_{n_2'}^{n_1'}\\left(\\frac{\\varepsilon}{2}\\right)+n_2'}}$"
   }
 ]
