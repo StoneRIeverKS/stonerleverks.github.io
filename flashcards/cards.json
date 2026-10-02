@@ -118,5 +118,9 @@
   {
     "question":"順序統計量の確率密度関数の公式",
     "answer":"$f_{X(k)} = \\dfrac{n!}{(k-1)!(n-k)!}F(x)^{k-1}(1-F(x))^{n-k}f(x)$"
+  },
+  {
+    "question":"\\Chi^2_n分布の確率密度関数・期待値・分散",
+    "answer":"$f(x) = \\dfrac{1}{2^{n/2} \\Gamma(n/2)} x^{n/2-1} e^{-x/2}$\n$E[X] = n$\n$Var(X) = 2n$"
   }
 ]
