@@ -120,11 +120,19 @@
     "answer":"$f_{X(k)} = \\dfrac{n!}{(k-1)!(n-k)!}F(x)^{k-1}(1-F(x))^{n-k}f(x)$"
   },
   {
-    "question":"$\\Chi^2_n$分布の確率密度関数・期待値・分散",
+    "question":"$\\chi^2_n$分布の確率密度関数・期待値・分散",
     "answer":"$f(x) = \\dfrac{1}{2^{n/2} \\Gamma(n/2)} x^{n/2-1} e^{-x/2}$\n$E[X] = n$\n$Var(X) = 2n$"
   },
   {
-    "question":"指数分布と$\\Chi^2$分布の関係",
+    "question":"指数分布と$\\chi^2$分布の関係",
     "answer":"平均2の指数分布の$n$個の独立な標本の和は$\\Chi^2_{2n}$分布に従う。"
+  },
+  {
+    "question":"重回帰分析の正規方程式",
+    "answer":"\\begin{pmatrix} 1 & \\bar{x_1} & \\bar{x_2} \\\\ \\bar{x_1} & \\bar{x_1}^2 & \\bar{x_1x_2} \\\\ \\bar{x_2} & \\bar{x_1x_2} & \\bar{x_2}^2 \\end{pmatrix} \\begin{pmatrix}  \\hat{\\alpha} \\\\ \\hat{\\beta}_1 \\\\ \\hat{\\beta}_2 \\end{pmatrix} = \\begin{pmatrix} \\bar{y} \\\\ \\bar{x_1 y} \\\\ \\bar{x_2 y} \\end{pmatrix}"
+  },
+  {
+    "question":"$f_Y(Y)$を取得できるという状況下で、$f_X(X)$を棄却法でシミュレーションする際の各ステップを説明せよ",
+    "answer":"step1: $Y$を$f_Y$から生成する\nstep2: $U$を$U(0,1)$から生成する\nstep3: $U \\leq \\dfrac{f_X(Y)}{c f_Y(Y)}$のとき$X=Y$を採用する。成り立たないときは採用せず最初に戻る。"
   }
 ]
