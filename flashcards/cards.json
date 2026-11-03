@@ -1,141 +1,196 @@
 [
   {
+    "id": 1,
     "question": "母平均$\\lambda$の指数分布の確率密度関数・平均・分散・積率母関数",
     "answer": "$f(x)=\\dfrac{1}{\\lambda} e^{-\\dfrac{1}{\\lambda} x}$\n$E[X]=\\lambda$\n$Var(X)=\\lambda^2$\n$M_X(t)=\\dfrac{1}{1-\\lambda t}$"
   },
   {
+    "id": 2,
     "question": "チェビシェフの不等式",
     "answer": "$P(|X-\\mu|\\ge k\\sigma)\\le \\dfrac{1}{k^2}$"
   },
   {
+    "id": 3,
     "question": "一様分布の和$U_1+U_2$の確率密度関数は？",
     "answer": "$f_{U_1+U_2}(u) = $\n$\\begin{cases} u & 0 < u < 1 \\\\ 2 - u & 1 \\le u < 2 \\\\ 0 & \\text{otherwise} \\end{cases}$"
   },
   {
+    "id": 4,
     "question": "一様分布の和$\\alpha U_1+ \\beta U_2\\ (\\alpha<\\beta)$の確率密度関数が通る点は？",
     "answer": "$(0, 0)$\n$(\\alpha, \\dfrac{1}{\\beta})$\n$(\\beta, \\dfrac{1}{\\beta})$\n$(\\alpha + \\beta, 0)$"
   },
   {
+    "id": 5,
     "question": "一様分布$X \\sim U(a,b)$の確率密度関数・平均・分散・積率母関数",
     "answer": "$f(x)=\\dfrac{1}{b-a}$\n$E[X]=\\dfrac{a+b}{2}$\n$Var(X)=\\dfrac{(b-a)^2}{12}$\n$M_X(t)=\\dfrac{e^{tb}-e^{ta}}{t(b-a)}$"
   },
   {
+    "id": 6,
     "question": "分散が特定の値に等しいかの検定を行う際の検定統計量",
     "answer": "$\\displaystyle{\\sum} \\left(\\frac{X_i-\\bar{X}}{\\sigma_0}\\right)^2 \\sim \\chi^2_{n-1}$"
   },
   {
+    "id": 7,
     "question": "有意水準",
     "answer": "$P({\\rm 棄却域}|H_0)$"
   },
   {
+    "id": 8,
     "question": "母平均$\\mu$の指数分布を$H_0: \\mu = \\mu_0$で検定する際の検定統計量",
     "answer": "$\\dfrac{2n \\hat{\\mu}}{\\mu_0} \\sim \\chi^2_{2n}$"
   },
   {
+    "id": 9,
     "question": "母平均$\\mu$の指数分布で標本に打ち切りがある場合に$H_0: \\mu = \\mu_0$で検定する際の検定統計量。ただし、打ち切りを$f$、$r = \\#\\{x_i \\leq f\\}$",
     "answer": "$\\hat{\\mu} = \\dfrac{\\displaystyle{\\sum_{i=1}^r} x_i +(n-r)f}{r}$\n$\\dfrac{2r \\hat{\\mu}}{\\mu_0} \\sim \\chi^2_{2r}$"
   },
   {
+    "id": 10,
     "question": "1~Nまで書かれた紙から$n$枚非復元抽出したときの、$\\bar{X}$の期待値と分散",
     "answer": "$E[\\bar{X}] = \\dfrac{N+1}{2}$\n$Var(\\bar{X}) = \\dfrac{1}{n} \\dfrac{N-n}{N-1} \\dfrac{N^2-1}{12}$"
   },
   {
+    "id": 11,
     "question": "$F_n^m$分布の定義",
     "answer": "$\\chi_{n}^2, \\chi_{m}^2$に対して、$F_n^m = \\dfrac{\\chi_m^2/m}{\\chi_n^2/n}$"
   },
   {
+    "id": 12,
     "question": "$F_n^m(1-\\varepsilon)$と等しいものは？",
     "answer": "$\\dfrac{1}{F_m^n(\\varepsilon)}$"
   },
   {
+    "id": 13,
     "question": "分散比が1かどうかの検定統計量",
     "answer": "$s_x^2 = \\dfrac{1}{n_x-1} \\displaystyle{\\sum_{i=1}^{n_x} \\left(\\dfrac{X_i - \\bar{X}}{\\sigma_x} \\right)^2}$\n$s_y^2 = \\dfrac{1}{n_y-1} \\displaystyle{\\sum_{i=1}^{n_y} \\left(\\dfrac{Y_i - \\bar{Y}}{\\sigma_y} \\right)^2}$\n$T = \\dfrac{s_x^2}{s_y^2} \\sim F_{n_y-1}^{n_x-1}$"
   },
   {
+    "id": 14,
     "question": "相関係数",
     "answer": "$r = \\dfrac{\\sum (X_i - \\bar{X})(Y_i - \\bar{Y})}{\\sqrt{\\sum_{i=1}^n (X_i - \\bar{X})^2 \\sum (Y_i - \\bar{Y})^2}}$"
   },
   {
+    "id": 15,
     "question": "偏自己相関の定義",
     "answer": "$Y_t-\\mu = \\phi_{1h}(Y_{t-1}-\\mu)+ \\cdots+ \\phi_{hh}(Y_{t-h}-\\mu)$"
   },
   {
+    "id": 16,
     "question":"AR(2)モデル$Y_t = \\phi_0 + \\phi_1 Y_{t-1} + \\phi_2 Y_{t-2} + \\varepsilon_t$の自己共分散",
     "answer": "${\\rm Var}\\left[Y_t\\right] = \\dfrac{1-\\phi_2}{1+\\phi_2} \\dfrac{\\sigma^2}{(1-\\phi_2)^2-\\phi_1^2}$"
   },
   {
+    "id": 17,
     "question":"十分統計量（充足している統計量）の定義",
     "answer": "$P(X=x | T(X)=t; \\theta) = P(X=x | T(X)=t)$"
   },
   {
+    "id": 18,
     "question":"クラメールラオの不等式",
     "answer": "${\\rm Var}[\\hat{\\theta}] \\geq \\dfrac{1}{E\\left[\\left(\\dfrac{\\partial \\log f(X;\\theta)}{\\partial \\theta}\\right)^2\\right]} = \\dfrac{1}{-E\\left[\\dfrac{\\partial^2 \\log f(X;\\theta)}{\\partial \\theta^2}\\right]}$"
   },
   {
+    "id": 19,
     "question":"Fisher-Neymanの分解定理",
     "answer": "$\\hat{\\theta}$が$\\theta$の十分統計量であることの必要十分条件は、$f(x;\\theta) = g(\\hat{\\theta};\\theta)h(x)$の形に分解できること"
   },
   {
+    "id": 20,
     "question":"しっぽ確率から期待値を求める公式",
     "answer": "$E[X] = \\int_0^\\infty P(X>x)dx$"
   },
   {
+    "id": 21,
     "question":"$f(x) e^x$と$f(x) e^{-x}$の積分",
     "answer": "$\\int f(x) e^x dx = e^x (f(x)-f^\\prime(x)+f^{\\prime \\prime}(x)-\\cdots)$\n$\\int f(x) e^{-x} dx = -e^{-x} (f(x)+f^\\prime(x)+f^{\\prime \\prime}(x)+\\cdots)$"
   },
   {
+    "id": 22,
     "question":"幾何分布の確率関数・期待値・分散・積率母関数",
     "answer": "$P(X=x) = p(1-p)^{x-1}$\n$E[X] = \\dfrac{1}{p}$\n$Var(X) = \\dfrac{1-p}{p^2}$\n$M(t) = \\dfrac{pe^t}{1-(1-p)e^t}$"
   },
   {
+    "id": 23,
+    "question":"二項分布$X \\sim \\mathrm{Bin}(n,p)$の確率関数・平均・分散・積率母関数",
+    "answer":"$P(X=x) = \\binom{n}{x}p^x(1-p)^{n-x}$\n$E[X] = np$\n$Var(X) = np(1-p)$\n$M_X(t) = (pe^t+1-p)^n$"
+  },
+  {
+    "id": 24,
+    "question":"Poisson分布$X \\sim \\mathrm{Poisson}(\\lambda)$の確率関数・平均・分散・積率母関数",
+    "answer":"$P(X=x) = \\dfrac{e^{-\\lambda}\\lambda^x}{x!},\\quad x=0,1,2,\\ldots$\n$E[X] = \\lambda$\n$Var(X) = \\lambda$\n$M_X(t) = e^{\\lambda(e^t-1)}$"
+  },
+  {
+    "id": 25,
+    "question":"負の二項分布$X$（$r$回成功するまでの失敗回数、成功確率$p$）の確率関数・平均・分散・積率母関数",
+    "answer":"$P(X=x) = \\binom{x+r-1}{x}p^r(1-p)^x,\\quad x=0,1,2,\\ldots$\n$E[X] = \\dfrac{r(1-p)}{p}$\n$Var(X) = \\dfrac{r(1-p)}{p^2}$\n$M_X(t) = \\left(\\dfrac{p}{1-(1-p)e^t}\\right)^r,\\quad t < -\\ln(1-p)$"
+  },
+  {
+    "id": 26,
+    "question":"ガンマ分布$X \\sim \\mathrm{Gamma}(\\alpha,\\theta)$（形状$\\alpha$、尺度$\\theta$）の確率密度関数・平均・分散・積率母関数",
+    "answer":"$f(x) = \\dfrac{x^{\\alpha-1}e^{-x/\\theta}}{\\Gamma(\\alpha)\\theta^\\alpha},\\quad x>0$\n$E[X] = \\alpha\\theta$\n$Var(X) = \\alpha\\theta^2$\n$M_X(t) = (1-\\theta t)^{-\\alpha},\\quad t < \\dfrac{1}{\\theta}$"
+  },
+  {
+    "id": 27,
     "question":"正規分布の積率母関数",
     "answer":"$m(t) = e^{\\mu t \\dfrac{\\sigma^2 t^2}{2}}$"
   },
   {
+    "id": 28,
     "question":"$F_{m}^{n}$分布の確率密度関数・期待値",
     "answer":"$f(x) = \\dfrac{\\left(\\dfrac{n}{m}\\right)^{\\dfrac{n}{2}}}{B\\left(\\dfrac{n}{2}, \\dfrac{m}{2}\\right)} \\dfrac{x^{\\dfrac{n}{2}-1}}{\\left(1+\\dfrac{n}{m}x\\right)^{\\dfrac{n+m}{2}}}$\n$E[X]=\\dfrac{m}{m-2}$"
   },
   {
+    "id": 29,
     "question":"決定係数の定義",
     "answer":"$R^2 = \\dfrac{\\sum (\\hat{Y}_i - \\bar{Y})^2}{\\sum (Y_i - \\bar{Y})^2}$"
   },
   {
+    "id": 30,
     "question":"単回帰の場合、決定係数は何と等しいか？",
     "answer":"相関係数と等しい。つまり、$R^2 = r_{xy}^2$"
   },
   {
+    "id": 31,
     "question":"$\\Gamma\\left(\\dfrac{1}{2}\\right)$はいくつ？",
     "answer":"$\\sqrt{\\pi}$"
   },
   {
+    "id": 32,
     "question":"$N$個の球が入った袋があり、そのうちの$M$個が赤、$N-M$個が白である。このとき、$n$個の球を無作為に抽出したとき、赤い球が$x$個である確率を表す確率分布の名前と確率関数は？",
     "answer":"超幾何分布\n$P(X=x) = \\dfrac{\\binom{M}{x} \\binom{N-M}{n-x}}{\\binom{N}{n}}$"
   },
   {
+    "id": 33,
     "question":"Bernoulli分布の$\\hat{p}$の精密法の信頼区間の使うべきときとその公式",
     "answer":"使うべき時：$n \\bar{x} \\leq 4$\n公式：$t=n\\bar{x}$\n$n_1 = 2(n-t+1)$\n$n_2 = 2t$\n$n_1^\\prime = 2(t+1)$\n$n_2^\\prime = 2(n-t)$\n$\\dfrac{n_2}{n_1 F_{n_2}^{n_1}\\left(\\dfrac{\\varepsilon}{2}\\right)+n_2}\\lt p \\lt \\dfrac{n_1^\\prime F_{n_2^\\prime}^{n_1^\\prime}\\left(\\frac{\\varepsilon}{2}\\right)}{n_1^\\prime F_{n_2^\\prime}^{n_1^\\prime}\\left(\\frac{\\varepsilon}{2}\\right)+n_2^\\prime}$"
   },
   {
+    "id": 34,
     "question":"順序統計量の確率密度関数の公式",
     "answer":"$f_{X(k)} = \\dfrac{n!}{(k-1)!(n-k)!}F(x)^{k-1}(1-F(x))^{n-k}f(x)$"
   },
   {
-    "question":"$\\chi^2_n$分布の確率密度関数・期待値・分散",
-    "answer":"$f(x) = \\dfrac{1}{2^{n/2} \\Gamma(n/2)} x^{n/2-1} e^{-x/2}$\n$E[X] = n$\n$Var(X) = 2n$"
+    "id": 35,
+    "question":"カイ二乗分布$X \\sim \\chi_n^2$の確率密度関数・平均・分散・積率母関数",
+    "answer":"$f(x) = \\dfrac{1}{2^{n/2} \\Gamma(n/2)} x^{n/2-1} e^{-x/2},\\quad x>0$\n$E[X] = n$\n$Var(X) = 2n$\n$M_X(t) = (1-2t)^{-n/2},\\quad t < \\dfrac{1}{2}$"
   },
   {
+    "id": 36,
     "question":"指数分布と$\\chi^2$分布の関係",
     "answer":"平均2の指数分布の$n$個の独立な標本の和は$\\Chi^2_{2n}$分布に従う。"
   },
   {
+    "id": 37,
     "question":"重回帰分析の正規方程式",
     "answer":"\\begin{pmatrix} 1 & \\bar{x_1} & \\bar{x_2} \\\\ \\bar{x_1} & \\bar{x_1}^2 & \\bar{x_1x_2} \\\\ \\bar{x_2} & \\bar{x_1x_2} & \\bar{x_2}^2 \\end{pmatrix} \\begin{pmatrix}  \\hat{\\alpha} \\\\ \\hat{\\beta}_1 \\\\ \\hat{\\beta}_2 \\end{pmatrix} = \\begin{pmatrix} \\bar{y} \\\\ \\bar{x_1 y} \\\\ \\bar{x_2 y} \\end{pmatrix}"
   },
   {
+    "id": 38,
     "question":"$f_Y(Y)$を取得できるという状況下で、$f_X(X)$を棄却法でシミュレーションする際の各ステップを説明せよ",
     "answer":"step1: $Y$を$f_Y$から生成する\nstep2: $U$を$U(0,1)$から生成する\nstep3: $U \\leq \\dfrac{f_X(Y)}{c f_Y(Y)}$のとき$X=Y$を採用する。成り立たないときは採用せず最初に戻る。"
   },
   {
+    "id": 39,
     "question":"集合$A,B,C$が3つある場合の包除原理（確率）の公式",
     "answer":"$P(A \\cup B \\cup C) = P(A) + P(B) + P(C) - P(A \\cap B) - P(A \\cap C) - P(B \\cap C) + P(A \\cap B \\cap C)$"
   }

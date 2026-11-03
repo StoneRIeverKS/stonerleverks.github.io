@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カード内容テスト | 単語帳</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .card {
+            min-height: 100px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 16px 0;
+            font-size: 1.3rem;
+            white-space: pre-wrap;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        button {
+            font-size: 1rem;
+            padding: 10px 18px;
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        #answer[hidden] {
+            display: none;
+        }
+
+        #error {
+            color: #b00020;
+        }
+    </style>
+</head>
+<body>
+    <h1>カード内容テスト</h1>
+    <p><a href="../index.html">ランダム表示へ戻る</a></p>
+    <p id="cardCounter" aria-live="polite"></p>
+    <div id="error" role="alert" hidden></div>
+    <main>
+        <section class="card" aria-label="問題">
+            <div id="question"></div>
+        </section>
+        <section id="answer" class="card" aria-label="答え" hidden>
+            <div id="answerContent"></div>
+        </section>
+        <div class="controls">
+            <button id="previousBtn" type="button" disabled>前へ</button>
+            <button id="showAnswerBtn" type="button" disabled>答えを見る</button>
+            <button id="nextBtn" type="button" disabled>次へ</button>
+        </div>
+    </main>
+
+    <script>
+        let cards = [];
+        let currentIndex = 0;
+
+        const counter = document.getElementById("cardCounter");
+        const error = document.getElementById("error");
+        const question = document.getElementById("question");
+        const answer = document.getElementById("answer");
+        const answerContent = document.getElementById("answerContent");
+        const previousButton = document.getElementById("previousBtn");
+        const showAnswerButton = document.getElementById("showAnswerBtn");
+        const nextButton = document.getElementById("nextBtn");
+
+        function showError(message, cause) {
+            console.error(message, cause);
+            error.textContent = message;
+            error.hidden = false;
+        }
+
+        function renderMath(element) {
+            if (!window.MathJax?.typesetPromise) {
+                showError("数式表示ライブラリを読み込めませんでした。");
+                return;
+            }
+
+            window.MathJax.typesetPromise([element]).catch(cause => {
+                showError("数式の表示に失敗しました。", cause);
+            });
+        }
+
+        function displayCard() {
+            const card = cards[currentIndex];
+            window.MathJax?.typesetClear?.([question, answerContent]);
+
+            counter.textContent =
+                `カードNo. ${card.id}（${currentIndex + 1} / ${cards.length}）`;
+            question.innerHTML = card.question;
+            answerContent.innerHTML = card.answer;
+            answer.hidden = true;
+
+            previousButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex === cards.length - 1;
+            showAnswerButton.disabled = false;
+
+            renderMath(question);
+        }
+
+        async function loadCards() {
+            try {
+                const response = await fetch("./cards.json");
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const loadedCards = await response.json();
+                if (!Array.isArray(loadedCards) || loadedCards.length === 0) {
+                    throw new Error("カード一覧が空か、配列ではありません。");
+                }
+
+                const ids = new Set();
+                for (const card of loadedCards) {
+                    if (
+                        !card ||
+                        !Number.isSafeInteger(card.id) ||
+                        card.id < 1 ||
+                        typeof card.question !== "string" ||
+                        typeof card.answer !== "string"
+                    ) {
+                        throw new Error("カードに有効なid、question、answerが必要です。");
+                    }
+                    if (ids.has(card.id)) {
+                        throw new Error(`カードNo. ${card.id} が重複しています。`);
+                    }
+                    ids.add(card.id);
+                }
+
+                cards = loadedCards.sort((a, b) => a.id - b.id);
+                displayCard();
+            } catch (cause) {
+                showError("カードデータを読み込めませんでした。", cause);
+            }
+        }
+
+        previousButton.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex -= 1;
+                displayCard();
+            }
+        });
+
+        showAnswerButton.addEventListener("click", () => {
+            answer.hidden = false;
+            renderMath(answerContent);
+        });
+
+        nextButton.addEventListener("click", () => {
+            if (currentIndex < cards.length - 1) {
+                currentIndex += 1;
+                displayCard();
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", loadCards);
+    </script>
+</body>
+</html>
