@@ -202,12 +202,12 @@
   {
     "id": 41,
     "question":"マルコフ連鎖の定常分布の定義",
-    "answer":"確率ベクトル$\\boldsymbol{\\pi}=(\\pi_i)$が$\\pi_i\\geq 0$、$\\displaystyle\\sum_i\\pi_i=1$を満たし、遷移行列$P$に対して$\\boldsymbol{\\pi}P=\\boldsymbol{\\pi}$を満たすとき、$\\boldsymbol{\\pi}$を定常分布という。成分では$\\pi_j=\\displaystyle\\sum_i\\pi_i p_{ij}$。"
+    "answer":"確率横ベクトル$\\boldsymbol{\\pi}=(\\pi_i)$が遷移行列$P$に対して$\\boldsymbol{\\pi}P=\\boldsymbol{\\pi}$を満たすとき、$\\boldsymbol{\\pi}$を定常分布という。"
   },
   {
     "id": 42,
-    "question":"通常のモンテカルロ法による積分値$I=\\displaystyle\\int_a^b f(x)\\,dx$の推定量",
-    "answer":"$X_1,\\ldots,X_n\\overset{\\rm iid}{\\sim}U(a,b)$とすると、$\\hat{I}_{\\rm MC}=\\dfrac{b-a}{n}\\displaystyle\\sum_{i=1}^{n}f(X_i)$。"
+    "question":"通常のモンテカルロ法による積分値$I=\\displaystyle\\int_0^1 f(x)\\,dx$の推定量",
+    "answer":"$X_1,\\ldots,X_n\\overset{\\rm iid}{\\sim}U(0,1)$とすると、$\\hat{I}_{\\rm MC}=\\dfrac{1}{n}\\displaystyle\\sum_{i=1}^{n}f(X_i)$。"
   },
   {
     "id": 43,
