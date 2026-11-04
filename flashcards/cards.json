@@ -193,5 +193,30 @@
     "id": 39,
     "question":"集合$A,B,C$が3つある場合の包除原理（確率）の公式",
     "answer":"$P(A \\cup B \\cup C) = P(A) + P(B) + P(C) - P(A \\cap B) - P(A \\cap C) - P(B \\cap C) + P(A \\cap B \\cap C)$"
+  },
+  {
+    "id": 40,
+    "question":"マルコフ連鎖の遷移行列の定義",
+    "answer":"状態$i$から状態$j$への1ステップ遷移確率を$p_{ij}=P(X_{n+1}=j\\mid X_n=i)$とすると、遷移行列は$P=(p_{ij})$。各要素は$p_{ij}\\geq 0$、各行の和は$\\displaystyle\\sum_j p_{ij}=1$。"
+  },
+  {
+    "id": 41,
+    "question":"マルコフ連鎖の定常分布の定義",
+    "answer":"確率ベクトル$\\boldsymbol{\\pi}=(\\pi_i)$が$\\pi_i\\geq 0$、$\\displaystyle\\sum_i\\pi_i=1$を満たし、遷移行列$P$に対して$\\boldsymbol{\\pi}P=\\boldsymbol{\\pi}$を満たすとき、$\\boldsymbol{\\pi}$を定常分布という。成分では$\\pi_j=\\displaystyle\\sum_i\\pi_i p_{ij}$。"
+  },
+  {
+    "id": 42,
+    "question":"通常のモンテカルロ法による積分値$I=\\displaystyle\\int_a^b f(x)\\,dx$の推定量",
+    "answer":"$X_1,\\ldots,X_n\\overset{\\rm iid}{\\sim}U(a,b)$とすると、$\\hat{I}_{\\rm MC}=\\dfrac{b-a}{n}\\displaystyle\\sum_{i=1}^{n}f(X_i)$。"
+  },
+  {
+    "id": 43,
+    "question":"負の相関法（反対変量法）による積分値$I=\\displaystyle\\int_0^1 f(u)\\,du$の推定量",
+    "answer":"$U_1,\\ldots,U_n\\overset{\\rm iid}{\\sim}U(0,1)$を生成し、各$U_i$と$1-U_i$を組にして、$\\hat{I}_{\\rm anti}=\\dfrac{1}{n}\\displaystyle\\sum_{i=1}^{n}\\dfrac{f(U_i)+f(1-U_i)}{2}$と推定する。"
+  },
+  {
+    "id": 44,
+    "question":"変量制御法による積分値$I=\\displaystyle\\int_0^1 f(u)\\,du$の推定量",
+    "answer":"期待値$\\mu_g=E[g(U)]$が既知の制御変量$g(U)$を用いて、$\\hat{I}_{\\rm cv}=\\dfrac{1}{n}\\displaystyle\\sum_{i=1}^{n}\\left[f(U_i)-c\\bigl(g(U_i)-\\mu_g\\bigr)\\right]$と推定する。ただし$U_i\\overset{\\rm iid}{\\sim}U(0,1)$、$c$は定数で、分散を最小にする値は$c^*=\\dfrac{\\operatorname{Cov}(f(U),g(U))}{\\operatorname{Var}(g(U))}$。"
   }
 ]
